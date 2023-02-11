@@ -1,4 +1,4 @@
-package ej_cola_a;
+package ejercicios.ej_cola_a;
 import java.util.ArrayList;
 
 public class ColaArreglo<T> {
