@@ -1,48 +1,45 @@
-public class Nodo<T> {
-    private T datos;
-    private Nodo<T> ant;
-    private Nodo<T> sig;
-
-    Nodo(){}
-
-    Nodo(T datos) {
-        this.datos = datos;
-        this.ant = null;
-        this.sig = null;
+public  class Nodo<T> {
+    private T data;
+    private Nodo<T> prev;
+    private Nodo<T> next;
+    Nodo(T data, Nodo<T> prev, Nodo<T> next) {
+      this.data = data;
+      this.prev = prev;
+      this.next = next;
     }
 
-    Nodo(T datos, Nodo<T> ant, Nodo<T> sig) {
-        this.datos = datos;
-        this.ant = ant;
-        this.sig = sig;
+    @Override
+    public String toString() {
+      return data.toString();
     }
 
-    public void setDatos(T datos) {
-        this.datos = datos;
+    public T getData() {
+        return data;
     }
 
-    public void setSig(Nodo<T> sig) {
-        this.sig = sig;
+    public void setElemento(T data) {
+        this.data = data;
     }
 
-    public void setAnt(Nodo<T> ant) {
-        this.ant = ant;
+    public Nodo<T> getPrev() {
+        return prev;
     }
 
-    public T getDatos() {
-        return this.datos;
+    public void setPrev(Nodo<T> prev) {
+        this.prev = prev;
     }
 
-    public Nodo<T> getAnt() {
-        return this.ant;
+    public Nodo<T> getNext() {
+        return next;
     }
 
-    public Nodo<T> getSig() {
-        return this.sig;
+    public void setNext(Nodo<T> next) {
+        this.next = next;
     }
 
     public void despegar() {
-        this.sig = null;
-        this.ant = null;
+        this.next = null;
+        this.prev = null;
     }
+    
 }

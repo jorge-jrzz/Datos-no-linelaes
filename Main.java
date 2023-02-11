@@ -6,28 +6,23 @@ class Main {
         Scanner sc = new Scanner(System.in);
         String valor = sc.next();
         System.out.println(valor);
-        
-
-
-        Pila pila = new Pila();
-        pila.push(1);
-        pila.push(2);
-        pila.push(3);
-        pila.push(4);
-
-        if(pila.top() != null) {
-            System.out.println("Cima: " + pila.top());
-        }
-
-        pila.printPila();
-        pila.clear();
         */
-        Nodo<Integer> nodo1 = new Nodo<Integer>();
-        Nodo<Integer> nodo2 = new Nodo<Integer>();
-        Nodo<Integer> nodo3 = new Nodo<Integer>();
+        PilaDinamica<Integer> pilaDinamica = new PilaDinamica<Integer>();
+        PilaArreglos<Integer> pilaArreglos = new PilaArreglos<Integer>();
+        
+        pilaDinamica.push(0);
+        pilaDinamica.push(1);
+        pilaDinamica.push(2);
+        pilaDinamica.push(3);
 
-        nodo1.setSig(nodo2);
-        nodo2.setSig(nodo3);
-        nodo2.setAnt(nodo1);
+        System.out.println(pilaDinamica);
+
+        pilaArreglos.push(0);
+        pilaArreglos.push(1);
+        pilaArreglos.push(2);
+        pilaArreglos.push(3);
+
+        System.out.print(pilaArreglos);
+       
     }
 }
