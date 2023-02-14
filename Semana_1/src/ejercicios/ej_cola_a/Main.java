@@ -1,28 +1,36 @@
 package ejercicios.ej_cola_a;
 
 public class Main {
-    public static void main(String[] args) {
-        ColaArreglo<Integer> q = new ColaArreglo<Integer>();
+     public static void main(String[] args) throws InterruptedException {
 
-   // deQueue is not possible on empty queue
-        q.deQueue();
+          //Checkpoint para medir el tiempo de ejecucion
+          long inicio = System.currentTimeMillis();
 
-   // enQueue 5 elements
-        q.enQueue(21);
-        q.enQueue(21);
-        q.enQueue(21);
-        q.enQueue(21);
-        q.enQueue(21);
+          ColaArreglo<Double> q = new ColaArreglo<Double>();
 
-   // 6th element can't be added to because the queue is full
-        q.enQueue(21);
+          // deQueue is not possible on empty queue
+          q.deQueue();
 
-        q.imprime();
+          // enQueue 5 elements
+          q.enQueue(39.89);
+          q.enQueue(39.89);
+          q.enQueue(39.89);
+          q.enQueue(39.89);
+          q.enQueue(39.89);
 
-   // deQueue removes element entered first i.e. 1
-        q.deQueue();
+          // 6th element can't be added to because the queue is full
+         q.enQueue(39.89);
 
-   // Now we have just 4 elements
-        q.imprime();
+          q.imprime();
+
+          // deQueue removes element entered first i.e. 1
+          q.deQueue();
+
+          // Now we have just 4 elements
+          q.imprime();
+
+          long fin = System.currentTimeMillis();
+          double tiempo = (double) ((fin - inicio)/1000);
+          System.out.println(tiempo +" segundos");
     }
 }
