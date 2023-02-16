@@ -1,21 +1,20 @@
 package ejercicios.ej_cola_a;
-import java.util.ArrayList;
+import java.lang.reflect.Array;
 
-public class ColaArreglo<T> {
+public class ColaArreglo <T> {
     private int TAM_MAX = 5;
-    private ArrayList<T> elementos;
+    private T[] elementos;
     private int frente, cola;
 
     public ColaArreglo() {
-        elementos = new ArrayList<T>();
         frente = -1;
         cola = -1;
     }
 
-    // public ColaArreglo() {
-    //     frente = -1;
-    //     cola = -1;
-    // }
+    public ColaArreglo(Class<T> clazz) {
+        // @SuppressWarnings("unchecked")
+        elementos = (T[]) Array.newInstance(clazz, TAM_MAX);
+    }
 
     boolean estaLlena() {
         return frente == 0 && cola == TAM_MAX - 1;
@@ -33,19 +32,18 @@ public class ColaArreglo<T> {
                 frente = 0;
             }
             cola++;
-            elementos.add(elemento);
+            elementos[cola] = elemento;
             System.out.println("Insertado " + elemento);
         }
     }
     
-    public int deQueue() {
+    T deQueue() {
         T elemento;
         if (esVacia()) {
             System.out.println("la cola está vacía");
-            return (-1);
-            // return null;
+            return null;
         } else {
-            elemento = elementos.get(frente);
+            elemento = elementos[frente];
             if (frente >= cola) {
                 frente = -1;
                 cola = -1;
@@ -53,20 +51,20 @@ public class ColaArreglo<T> {
                 frente++;
             }
             System.out.println("Borrado -> " + elemento);
-            return 0;
+            return elemento;
         }
     }
     
     void imprime() {
-    /* Function to display elements of Queue */
+    //  Function to display elements of Queue 
         int i;
         if (esVacia()) {
             System.out.println("Vacia");
         } else {
-            System.out.println("\nIIndice frente-> " + frente);
+            System.out.println("\nIndice frente-> " + frente);
             System.out.println("Elementos -> ");
             for (i = frente; i <= cola; i++) {
-                System.out.print(elementos.get(i) + "  ");
+                System.out.print(elementos[i] + "  ");
             }
             System.out.println("\nUltimo Indice-> " + cola);
         }

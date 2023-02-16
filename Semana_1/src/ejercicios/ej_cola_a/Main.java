@@ -6,20 +6,20 @@ public class Main {
           //Checkpoint para medir el tiempo de ejecucion
           long inicio = System.currentTimeMillis();
 
-          ColaArreglo<Double> q = new ColaArreglo<Double>();
+          ColaArreglo<Integer> q = new ColaArreglo<Integer>(Integer.class);
 
           // deQueue is not possible on empty queue
           q.deQueue();
 
           // enQueue 5 elements
-          q.enQueue(39.89);
-          q.enQueue(39.89);
-          q.enQueue(39.89);
-          q.enQueue(39.89);
-          q.enQueue(39.89);
+          q.enQueue(24);
+          q.enQueue(24);
+          q.enQueue(24);
+          q.enQueue(24);
+          q.enQueue(24);
 
           // 6th element can't be added to because the queue is full
-         q.enQueue(39.89);
+         q.enQueue(24);
 
           q.imprime();
 
