@@ -20,13 +20,6 @@ public class Par <T, E>{
         this.datoE = datoE;
     }
 
-    /*
-    public void print(T datoT, E datoE) {
-        System.out.println("Dato tipo int: " + this.datoT);
-        System.out.println("Dato tipo string: " + this.datoE);
-    }
-    */
-
     @Override
     public String toString() {
         return "Dato tipo int: " + this.datoT + "\nDato tipo string: " + this.datoE;
